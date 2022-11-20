@@ -468,9 +468,11 @@ class Admin extends CI_Controller {
     {
         $id = $_GET['id'];
 
-        $this->db->select('*');
+        $this->db->select('pengajuan.*, atasan_1.nama AS pihak_1_nama, atasan_1.nip AS pihak_1_nip, atasan_1.jabatan AS pihak_1_jabatan, atasan_2.nama AS pihak_2_nama, atasan_2.nip AS pihak_2_nip, atasan_2.jabatan AS pihak_2_jabatan');
         $this->db->from('pengajuan');
         $this->db->where('pengajuan_id', $id);
+        $this->db->join('atasan AS atasan_1', 'pengajuan.pihak_1 = atasan_1.atasan_id');
+        $this->db->join('atasan AS atasan_2', 'pengajuan.pihak_2 = atasan_2.atasan_id');
         $result = $this->db->get()->result();
 
         $this->load->view('admin/pengajuan_cetak', [

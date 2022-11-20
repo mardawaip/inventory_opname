@@ -22,13 +22,14 @@
 		}
 	</style>
 </head>
-<!-- <body onload="window.print()"> -->
-	<body>
-	<h3 class="text-center">
+<body onload="window.print()">
+	<!-- <body> -->
+	<h4 class="text-center">
 		BERITA ACARA PEMINDAHAN/PENYERAHAN DOKUMEN TIDAK VALID<br/>
-		SUKU DINAS KEPENDUDUKAN DAN PENCATATAN SIPIL KOTA ADMINISTRASI JAKARTA SELATAN<br/>
+		SUKU DINAS KEPENDUDUKAN DAN PENCATATAN SIPIL KOTA<br/>
+		ADMINISTRASI JAKARTA SELATAN<br/>
 		KECAMATAN TEBET<br/>
-	</h3>
+	</h4>
 	<hr/>
 	<div class="text-center">
 		<b>NOMOR : <?= $data->nomor ?></b>
@@ -41,19 +42,19 @@
 			<td>I.</td>
 			<td>Nama</td>
 			<td>:</td>
-			<td>Salimin, S.Sos</td>
+			<td><?= $data->pihak_1_nama ?></td>
 		</tr>
 		<tr>
 			<td></td>
 			<td>NIP</td>
 			<td>:</td>
-			<td>197005041993011001</td>
+			<td><?= $data->pihak_1_nip ?></td>
 		</tr>
 		<tr>
 			<td></td>
 			<td>Jabatan</td>
 			<td>:</td>
-			<td>Plh. Kepala/Pengadministrasi Satuan Pelaksana Pelayanan Dukcapil Kelurahan Tebet Timur</td>
+			<td><?= $data->pihak_1_jabatan ?></td>
 		</tr>
 		<tr>
 			<td></td>
@@ -64,19 +65,19 @@
 			<td>II.</td>
 			<td>Nama</td>
 			<td>:</td>
-			<td>Salimin, S.Sos</td>
+			<td><?= $data->pihak_2_nama ?></td>
 		</tr>
 		<tr>
 			<td></td>
 			<td>NIP</td>
 			<td>:</td>
-			<td>197005041993011001</td>
+			<td><?= $data->pihak_2_nip ?></td>
 		</tr>
 		<tr>
 			<td></td>
 			<td>Jabatan</td>
 			<td>:</td>
-			<td>Plh. Kepala/Pengadministrasi Satuan Pelaksana Pelayanan Dukcapil Kelurahan Tebet Timur</td>
+			<td><?= $data->pihak_2_jabatan ?></td>
 		</tr>
 		<tr>
 			<td></td>
@@ -127,12 +128,12 @@
 		</tr>
 		<tr>
 			<td>
-				Dody Kurniawan<br/>
-				NIP. 198601092010011018<br/>
+				<?= $data->pihak_2_nama ?><br/>
+				NIP. <?= $data->pihak_2_nip ?><br/>
 			</td>
 			<td>
-				Dody Kurniawan<br/>
-				NIP. 198601092010011018<br/>
+				<?= $data->pihak_1_nama ?><br/>
+				NIP. <?= $data->pihak_1_nip ?><br/>
 			</td>
 		</tr>
 	</table>

@@ -274,7 +274,7 @@
 
 			$.ajax({
 				type: "POST",
-				url: "/inventory/admin/add_pengajuan",
+				url: "/inventory_opname/admin/add_pengajuan",
 				data: data,
 
 				success: function (response) {
