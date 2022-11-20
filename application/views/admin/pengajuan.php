@@ -28,6 +28,7 @@
 									<button id="btn-add" class="btn btn-success btn-xs edit-modal" data-toggle="modal" data-target="#modal-pengajuan"><i class="fa fa-plus"></i> Tambah</button>
 									<button id="btn-edit" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Edit</button>
 									<button id="btn-delete" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</button>
+									<button id="btn-cetak" class="btn btn-danger btn-xs"><i class="fa fa-print"></i> Cetak</button>
 								</div>
 								<div class="mb-8 flex flex-left">
 									<select id="tahun" class="form-control">
@@ -215,6 +216,15 @@
 				$('#status_pengajuan').val(data.status_pengajuan);
 
 				$('#modal-pengajuan').modal('show');
+			}
+		});
+
+		$("#btn-cetak").click(function(){
+			var data = table.row({ selected: true }).data();
+			if (!data) {
+				alert('Select the data !');
+			}else{
+				window.open(`http://localhost/inventory_opname/admin/pengajuan_cetak?id=${data.pengajuan_id}`);
 			}
 		});
 

@@ -459,6 +459,26 @@ class Admin extends CI_Controller {
         echo json_encode($json_data);
     }
 
+    public function format_tanggal($date)
+    {
+        return date_format(date_create($date),"l, d F Y");
+    }
+
+    public function pengajuan_cetak()
+    {
+        $id = $_GET['id'];
+
+        $this->db->select('*');
+        $this->db->from('pengajuan');
+        $this->db->where('pengajuan_id', $id);
+        $result = $this->db->get()->result();
+
+        $this->load->view('admin/pengajuan_cetak', [
+            'data' => $result[0],
+            'tanggal' => $this->format_tanggal($result[0]->tanggal)
+        ]);
+    }
+
     // END PENGAJUAN ------------------------------------------------------------------------------------------------
 
 }
